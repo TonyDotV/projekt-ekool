@@ -1,46 +1,198 @@
-usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
-           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
-           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
-           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
-           <command> [<args>]
 
-These are common Git commands used in various situations:
+class School:
+   def __init__(self):
+      pass
 
-start a working area (see also: git help tutorial)
-   clone      Clone a repository into a new directory
-   init       Create an empty Git repository or reinitialize an existing one
+class Student:
+   def __init__(self, nimi, kursus):
+      self.nimi=nimi
+      self.kursus=kursus
 
-work on the current change (see also: git help everyday)
-   add        Add file contents to the index
-   mv         Move or rename a file, a directory, or a symlink
-   restore    Restore working tree files
-   rm         Remove files from the working tree and from the index
+   def __str__(self):
+      return f"{self.nimi}, {self.kursus}"
+   
+class StudentList:
+   def __init__(self):
+      self.arr = []
 
-examine the history and state (see also: git help revisions)
-   bisect     Use binary search to find the commit that introduced a bug
-   diff       Show changes between commits, commit and working tree, etc
-   grep       Print lines matching a pattern
-   log        Show commit logs
-   show       Show various types of objects
-   status     Show the working tree status
+   def addStudent(self, student):
+      self.arr.append(student)
 
-grow, mark and tweak your common history
-   backfill   Download missing objects in a partial clone
-   branch     List, create, or delete branches
-   commit     Record changes to the repository
-   merge      Join two or more development histories together
-   rebase     Reapply commits on top of another base tip
-   reset      Reset current HEAD to the specified state
-   switch     Switch branches
-   tag        Create, list, delete or verify tags
+   def displayInfo(self):
+      for s in self.arr:
+         print(s)
 
-collaborate (see also: git help workflows)
-   fetch      Download objects and refs from another repository
-   pull       Fetch from and integrate with another repository or a local branch
-   push       Update remote refs along with associated objects
+class Teacher:
+   def __init__(self, nimi, kursused):
+      self.nimi=nimi
+      self.kursused=kursused
 
-'git help -a' and 'git help -g' list available subcommands and some
-concept guides. See 'git help <command>' or 'git help <concept>'
-to read about a specific subcommand or concept.
-See 'git help git' for an overview of the system.
+   def __str__(self):
+      return f"{self.nimi}, {self.kursused}"
+   
+class TeacherList:
+   def __init__(self):
+      self.arr = []
+
+   def addTeacher(self, teacher):
+      self.arr.append(teacher)
+
+   def displayInfo(self):
+      for t in self.arr:
+         print(t)
+
+
+# Sisselogimis süsteem
+class User:
+   def __init__(self, username, password, role):
+      self.username = username
+      self.password = password
+      self.role = role # student, teacher or admin
+
+
+class LoginSystem:
+   def __init__(self):
+      self.users = {
+         'opilane1': User('opilane1', 'pass123', 'student'),
+         'õpetaja1': User('õpetaja1', 'teach123', 'teacher'),
+         'admin': User('admin', 'admin123', 'admin')
+      }
+      self.current_user = None
+
+   def login(self):
+      attempts = 3
+      while attempts > 0:
+         username = input("Kasutajanimi: ")
+         password = input("Parool: ")
+
+         if username in self.users and self.users[username].password == password:
+            self.current_user = self.users[username]
+            print(f"\nEdukalt sisselogitud kui {self.current_user.role}!")
+            return True
+         else:
+            attempts -= 1
+            if attempts > 0:
+               print(f"Vale kasutajanimi v]i parool. Sul on {attempts} katset alles.\n")
+            else:
+               print("Liiga palju ebaõnnestunud katseid.")
+         return False
+   
+   def logout(self):
+      print(f"\n{self.current_user.username} logiti välja.")
+      self.current_user = None
+
+   def register_user(self, username, password, role):
+      """Admin can register new users"""
+      if username in self.users:
+         print("See kasutajanimi on juba olemas.")
+         return False
+      self.users[username] = User(username, password, role)
+      print(f"Kasutaja {username} registreeriti kui {role}.")
+      return True
+   
+# Menüü
+def student_menu(login_system, student_list):
+   while True:
+      print("\n--- ÕPILASE MENÜÜ ---")
+      print("1. Vaata õpilaste nimekirja")
+      print("2. Logi välja")
+      choice = input("Vali tegevus: ")
+
+      if choice == '1':
+         student_list.displayInfo()
+      elif choice == '2':
+         login_system.logout()
+         break
+      else:
+         print("Vale valik!")
+
+def teacher_menu(login_system, student_list, teacher_list):
+   while True:
+      print("\n--- ÕPETAJA MENÜÜ ---")
+      print("1. Vaata õpilaste nimekirja")
+      print("2. Lisa uus õpilane")
+      print("3. Vaata õpetajate nimekirja")
+      print("4. Logi välja")
+      choice = input("Vali tegevus: ")
+
+      if choice == '1':
+         student_list.displayInfo()
+      elif choice == '2':
+         nimi = input("Õpilase nimi: ")
+         kursus = input("Kursus: ")
+         student_list.addStudent(Student(nimi, kursus))
+         print("Õpilane lisatud!")
+      elif choice == '3':
+         teacher_list.displayInfo()
+      elif choice == '4':
+         login_system.logout()
+         break
+      else:
+         print("Vale valik!")
+
+def admin_menu(login_system, student_list, teacher_list):
+   while True:
+      print("\n--- ADMINI MENÜÜ ---")
+      print("1. Vaata õpilaste nimekirja")
+      print("2. Lisa uus õpilane")
+      print("3. Vaata õpetajate nimekirja")
+      print("4. Lisa uus õpetaja")
+      print("5. Registreeri uus kasutaja")
+      print("6. Logi välja")
+      choice = input("Vali tegevus: ")
+
+      if choice == '1':
+         student_list.displayInfo()
+      elif choice == '2':
+         nimi = input("Õpilase nimi: ")
+         kursus = input("Kursus: ")
+         student_list.addStudent(Student(nimi, kursus))
+         print("Õpilane lisatud!")
+      elif choice == 3:
+         teacher_list.displayInfo()
+      elif choice == 4:
+         nimi = input("Õpetaja nimi: ")
+         kursused = input("Kursused (komaga eraldatud): ")
+         teacher_list.addTeacher(Teacher(nimi, kursused))
+         print("Õpetaja lisatud!")
+      elif choice == '5':
+         username = input("Uus kasutajanimi: ")
+         password = input("Parool: ")
+         role = input("Roll(õpilane, õpetaja): ")
+         login_system.register_user(username, password, role)
+      elif choice == '6':
+         login_system.logout()
+         break
+      else:
+         print("Vale valik!")
+
+def main():
+   login_system = LoginSystem()
+   student_list = StudentList()
+   teacher_list = TeacherList()
+
+   # Ajutised andmed
+   student_list.addStudent(Student("Mari Maasikas", "10A"))
+   student_list.addStudent(Student("Jaan Tamm", "10B"))
+   teacher_list.addTeacher(Teacher("Kalle Kask", "Matemaatika, Füüsika"))
+
+   print("--- KOOLI SÜSTEEM ---")
+
+   while True:
+      if login_system.login():
+         role = login_system.current_user.role
+         
+         if role == 'student':
+            student_menu(login_system, student_list)
+         elif role == 'teacher':
+            teacher_menu(login_system, student_list, teacher_list)
+         elif role == 'admin':
+            admin_menu(login_system, student_list, teacher_list)
+      
+      retry = input("\nKas soovid uuesti sisse logida? (jah/ei): ")
+      if retry.lower() != 'jah':
+         print("Head aega!")
+         break
+
+if __name__ == "__main__":
+   main()

@@ -1,46 +1,32 @@
-usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
-           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
-           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
-           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
-           <command> [<args>]
+# Projekt eKool
 
-These are common Git commands used in various situations:
+Rühma liikmed : Tony Vorontsov
 
-start a working area (see also: git help tutorial)
-   clone      Clone a repository into a new directory
-   init       Create an empty Git repository or reinitialize an existing one
+Projekti idee on luua digitaalne eKool. Koolide, õpetajate ja õpilaste nimed on välja mõeldud ning pole võetud päris elust kuid tehtud enam-vähem realistlikuks. eKooli veebilehel saab sisse logida adminina, õpetajana või õpilasena ja vastavalt sisselogitule on neil ka erinevad õigused.
+Näiteks:
 
-work on the current change (see also: git help everyday)
-   add        Add file contents to the index
-   mv         Move or rename a file, a directory, or a symlink
-   restore    Restore working tree files
-   rm         Remove files from the working tree and from the index
+Admini õigused :
+- õpetaja andmeid
+- õpilaste andmeid
+- saab moodustada õpilaste pingerea keskmise hinde alusel
+- lubada kursustel õppida aineid
 
-examine the history and state (see also: git help revisions)
-   bisect     Use binary search to find the commit that introduced a bug
-   diff       Show changes between commits, commit and working tree, etc
-   grep       Print lines matching a pattern
-   log        Show commit logs
-   show       Show various types of objects
-   status     Show the working tree status
+Õpetaja õigused :
+- õpilaste andmed
+- õpilaste hinded
+- ained, mida õpetada
+- saab valida, mis ainet soovib õpetada (võib olla mitu)
 
-grow, mark and tweak your common history
-   backfill   Download missing objects in a partial clone
-   branch     List, create, or delete branches
-   commit     Record changes to the repository
-   merge      Join two or more development histories together
-   rebase     Reapply commits on top of another base tip
-   reset      Reset current HEAD to the specified state
-   switch     Switch branches
-   tag        Create, list, delete or verify tags
+Õpilase õigused :
+- ülevaade sooritatud ja mitte sooritatud ainetest
+- ülevaade oma hinnete üle sh ka keskmine hinne
+- ülevaade oma kursuse üle
+- saab ainetele registreerida
 
-collaborate (see also: git help workflows)
-   fetch      Download objects and refs from another repository
-   pull       Fetch from and integrate with another repository or a local branch
-   push       Update remote refs along with associated objects
+Dokumentatsioon on tehtud Trellos
+https://trello.com/b/tz0Mvv5e
 
-'git help -a' and 'git help -g' list available subcommands and some
-concept guides. See 'git help <command>' or 'git help <concept>'
-to read about a specific subcommand or concept.
-See 'git help git' for an overview of the system.
+git add "file.txt"
+git commit -m "second commit"
+git push -u origin main
+
