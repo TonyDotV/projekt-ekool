@@ -1,17 +1,19 @@
-
 class School:
    def __init__(self):
       pass
 
-class Student:
-   def __init__(self, nimi, kursus):
+class Student: # õpilaste andmed
+   def __init__(self, nimi, kursus, vanus, sugu, keskmine_hinne):
       self.nimi=nimi
       self.kursus=kursus
+      self.vanus=vanus
+      self.sugu=sugu
+      self.keskmine_hinne=keskmine_hinne
 
    def __str__(self):
       return f"{self.nimi}, {self.kursus}"
    
-class StudentList:
+class StudentList: # õpilaste nimekirja välja toomiseks
    def __init__(self):
       self.arr = []
 
@@ -22,7 +24,7 @@ class StudentList:
       for s in self.arr:
          print(s)
 
-class Teacher:
+class Teacher: 
    def __init__(self, nimi, kursused):
       self.nimi=nimi
       self.kursused=kursused
@@ -30,7 +32,7 @@ class Teacher:
    def __str__(self):
       return f"{self.nimi}, {self.kursused}"
    
-class TeacherList:
+class TeacherList: # õpetajate nimekirja välja toomiseks
    def __init__(self):
       self.arr = []
 
@@ -41,17 +43,14 @@ class TeacherList:
       for t in self.arr:
          print(t)
 
-
-# Sisselogimis süsteem
 class User:
    def __init__(self, username, password, role):
       self.username = username
       self.password = password
-      self.role = role # student, teacher or admin
+      self.role = role # õpilane, õpetaja või admin
 
-
-class LoginSystem:
-   def __init__(self):
+class LoginSystem: 
+   def __init__(self):                 # KASUTAJANIMED JA PAROOLID TESTIMISEKS
       self.users = {
          'opilane1': User('opilane1', 'pass123', 'student'),
          'õpetaja1': User('õpetaja1', 'teach123', 'teacher'),
@@ -59,7 +58,7 @@ class LoginSystem:
       }
       self.current_user = None
 
-   def login(self):
+   def login(self): # Sisselogimissüsteem
       attempts = 3
       while attempts > 0:
          username = input("Kasutajanimi: ")
@@ -77,12 +76,12 @@ class LoginSystem:
                print("Liiga palju ebaõnnestunud katseid.")
          return False
    
-   def logout(self):
+   def logout(self): # välja logimissüsteem
       print(f"\n{self.current_user.username} logiti välja.")
       self.current_user = None
 
-   def register_user(self, username, password, role):
-      """Admin can register new users"""
+   def register_user(self, username, password, role): # uue kasutaja registreerimissüsteem
+      """Admin saab registreerida uusi kasutajaid"""
       if username in self.users:
          print("See kasutajanimi on juba olemas.")
          return False
@@ -91,7 +90,7 @@ class LoginSystem:
       return True
    
 # Menüü
-def student_menu(login_system, student_list):
+def student_menu(login_system, student_list): # õpilase valikud
    while True:
       print("\n--- ÕPILASE MENÜÜ ---")
       print("1. Vaata õpilaste nimekirja")
@@ -106,31 +105,34 @@ def student_menu(login_system, student_list):
       else:
          print("Vale valik!")
 
-def teacher_menu(login_system, student_list, teacher_list):
+def teacher_menu(login_system, student_list, teacher_list): # õpetaja valikud
    while True:
       print("\n--- ÕPETAJA MENÜÜ ---")
       print("1. Vaata õpilaste nimekirja")
-      print("2. Lisa uus õpilane")
-      print("3. Vaata õpetajate nimekirja")
-      print("4. Logi välja")
+      print("2. Vaata õpetajate nimekirja")
+      print("3. Vaata õpilase hindeid")
+      print("4. Lisa õpilasele hinne")
+      print("5. Logi välja")
       choice = input("Vali tegevus: ")
 
       if choice == '1':
          student_list.displayInfo()
       elif choice == '2':
-         nimi = input("Õpilase nimi: ")
-         kursus = input("Kursus: ")
-         student_list.addStudent(Student(nimi, kursus))
-         print("Õpilane lisatud!")
-      elif choice == '3':
          teacher_list.displayInfo()
-      elif choice == '4':
+      elif choice == '3': # ajutine, lisan hiljem
+         break
+      elif choice == '4': # ajutine, lisan hiljem
+         nimi = input("Õpilase nimi: ")
+         kursus = input("Aine: ")
+         hinne = input("Hinne: ")
+         break
+      elif choice == '5':
          login_system.logout()
          break
       else:
          print("Vale valik!")
 
-def admin_menu(login_system, student_list, teacher_list):
+def admin_menu(login_system, student_list, teacher_list): # admini valikud
    while True:
       print("\n--- ADMINI MENÜÜ ---")
       print("1. Vaata õpilaste nimekirja")
@@ -148,9 +150,9 @@ def admin_menu(login_system, student_list, teacher_list):
          kursus = input("Kursus: ")
          student_list.addStudent(Student(nimi, kursus))
          print("Õpilane lisatud!")
-      elif choice == 3:
+      elif choice == '3':
          teacher_list.displayInfo()
-      elif choice == 4:
+      elif choice == '4':
          nimi = input("Õpetaja nimi: ")
          kursused = input("Kursused (komaga eraldatud): ")
          teacher_list.addTeacher(Teacher(nimi, kursused))
