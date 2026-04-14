@@ -69,6 +69,13 @@ class StudentList: # õpilaste nimekirja välja toomiseks
                return s
       return None
    
+   def remove_by_name(self, nimi):
+      student = self.find_by_name(nimi)
+      if student is not None:
+         self.arr.remove(student)
+         return True
+      return False
+   
    def display_grades(self, nimi):
       student = self.find_by_name(nimi)
       if student is None:
@@ -101,6 +108,23 @@ class TeacherList: # õpetajate nimekirja välja toomiseks
       for t in self.arr:
          print(t)
 
+   def find_by_name(self, nimi):
+      if nimi is None:
+         return None
+      
+      nimi = nimi.strip().lower()
+      for t in self.arr:
+         if t.nimi.strip().lower() == nimi:
+            return t
+      return None
+   
+   def remove_by_name(self, nimi):
+      teacher = self.find_by_name(nimi)
+      if teacher is not None:
+         self.arr.remove(teacher)
+         return True
+      return False
+
 class User:
    def __init__(self, username, password, role, full_name=None):
       self.username = username
@@ -116,6 +140,24 @@ class LoginSystem:
          'admin': User('admin', 'admin123', 'admin')
       }
       self.current_user = None
+
+      def register_user(self, username, password, role, full_name=None):
+         if username in self.users:
+            print("See kasutajanimi on juba olemas.")
+            return False
+
+   def delete_user(self, username):
+      if username not in self.users:
+         print("Kasutajat ei leitud.")
+         return None
+      
+      if username == "admin":
+         print("Admin kasutajat ei saa kustutada")
+         return None
+      
+      removed_user = self.users.pop(username, None)
+      print(f"Kasutaja {username} kustutatud.")
+      return removed_user
 
    def login(self): # Sisselogimissüsteem
       attempts = 3
@@ -212,11 +254,14 @@ def teacher_menu(login_system, student_list, teacher_list): # õpetaja valikud
 
       if choice == '1':
          student_list.displayInfo()
+      
       elif choice == '2':
          teacher_list.displayInfo()
+      
       elif choice == '3': # ajutine, lisan hiljem
          nimi = input("Sisesta õpilase täisnimi: ")
          student_list.display_grades(nimi)
+      
       elif choice == '4': # ajutine, lisan hiljem
          nimi = input("Õpilase täisnimi: ").strip()
          student = student_list.find_by_name(nimi)
@@ -227,6 +272,7 @@ def teacher_menu(login_system, student_list, teacher_list): # õpetaja valikud
             hinne = input("Hinne: ")
             student.lisa_hinne(aine, hinne)
             print("Hinne lisatud!")
+      
       elif choice == '5':
          nimi = input("Sisesta õpilase täisnimi: ")
          student = student_list.find_by_name(nimi)
@@ -243,6 +289,7 @@ def teacher_menu(login_system, student_list, teacher_list): # õpetaja valikud
                print("Keskmised hinded aine kaupa: ")
                for aine, k in aine_keskmised.items():
                   print(f"{aine}: {k:.2f}")
+      
       elif choice == '6':
          login_system.logout()
          break
@@ -255,7 +302,8 @@ def admin_menu(login_system, student_list, teacher_list): # admini valikud
       print("1. Vaata õpilaste nimekirja")
       print("2. Vaata õpetajate nimekirja")
       print("3. Registreeri uus kasutaja")
-      print("4. Logi välja")
+      print("4. Kustuta kasutaja")
+      print("5. Logi välja")
       choice = input("Vali tegevus: ")
 
       if choice == '1':
@@ -284,14 +332,26 @@ def admin_menu(login_system, student_list, teacher_list): # admini valikud
             subjects = input("Ained (komaga eraldatud): ")
 
             success = login_system.register_user(username, password, role, full_name)
-            
+
             if success:
                teacher_list.addTeacher(Teacher(full_name, subjects))
                print("Õpetaja konto ja õpetaja lisatud!")
          else:
             print("Vale roll!")
-      
+
       elif choice == '4':
+         username = input("Sisesta kustutatava kasutaja kasutajanimi: ").strip()
+         removed_user = login_system.delete_user(username)
+
+         if removed_user is not None:
+            if removed_user.role == "student":
+               student_list.remove_by_name(removed_user.full_name)
+               print("Seotud õpilane eemaldati nimekirjast.")
+            elif removed_user.role == "teacher":
+               teacher_list.remove_by_name(removed_user.full_name)
+               print("Seotud õpetaja eemaldati nimekirjast.")
+      
+      elif choice == '5':
          login_system.logout()
          break
       else:
