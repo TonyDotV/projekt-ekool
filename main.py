@@ -9,6 +9,10 @@ class Student: # õpilaste andmed
       self.vanus=vanus
       self.sugu=sugu
       self.keskmine_hinne=keskmine_hinne
+      self.hinded = []
+
+   def lisa_hinne(self, aine, hinne):
+      self.hinded.append((aine, hinne))
 
    def __str__(self):
       return f"{self.nimi}, {self.kursus}"
@@ -23,6 +27,25 @@ class StudentList: # õpilaste nimekirja välja toomiseks
    def displayInfo(self):
       for s in self.arr:
          print(s)
+
+   def find_by_name(self, nimi):
+      for s in self.arr:
+         if s.nimi == nimi:
+            return s
+      return None
+   
+   def display_grades(self, nimi):
+      student = self.find_by_name(nimi)
+      if student is None:
+         print("Õpilast sellise nimega ei leitud.")
+         return
+      if not student.hinded:
+         print(f"{student.nimi} hinnetelehte ei ole.")
+         return
+      
+      print(f"\nHinded õpilasele {student.nimi}: ")
+      for aine, hinne in student.hinded:
+         print(f"{aine}: {hinne}")
 
 class Teacher: 
    def __init__(self, nimi, kursused):
@@ -71,10 +94,10 @@ class LoginSystem:
          else:
             attempts -= 1
             if attempts > 0:
-               print(f"Vale kasutajanimi v]i parool. Sul on {attempts} katset alles.\n")
+               print(f"Vale kasutajanimi või parool. Sul on {attempts} katset alles.\n")
             else:
                print("Liiga palju ebaõnnestunud katseid.")
-         return False
+      return False
    
    def logout(self): # välja logimissüsteem
       print(f"\n{self.current_user.username} logiti välja.")
