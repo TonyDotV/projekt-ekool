@@ -61,7 +61,7 @@ Veaparandused<br>
   ++ parandasin õpetaja kasutaja registreerimise<br>
   ++ vahetasin mõned koodi osad eesti keelseks, tekitas probleemi koodi kirjutamisel
 <br>
-Töö kestvus : 1h 30 min (koolis)
+Töö kestvus : 1h 30m (koolis)
 
 Commit 3
 <br>
@@ -72,3 +72,5 @@ Commit 3
   ++ admin saab nüüd eemaldada õpetajaid/õpilasi süsteemist
   <br>
   -- õpilased ei saa enam teiste õpilaste andmeid vaadata
+  <br>
+  Töö kestvus : 1h 30m (koolis)
