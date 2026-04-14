@@ -61,8 +61,8 @@ Veaparandused
 
 Töö kestvus : 1h 30 min (koolis)
 
-Commit 3
-Õpilase õiguste muutmine
+Commit 3<br>
+Õpilase õiguste muutmine<br>
   +++ õpilased saavad nüüd enda hindeid ja üldist keskmist hinnet näha<br>
   +++ õpetajad saavad õpilaste keskmiseid hindeid vaadata<br>
   +++ enam ei pea eraldi õpilasi/õpetajaid lisama vaid registreerides lisatakse need automaatselt rollidesse
