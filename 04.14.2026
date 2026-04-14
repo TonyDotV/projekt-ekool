@@ -1,0 +1,6 @@
+Lisasin hinnete süsteem
+  + õpetajad saavad hindeid lisada ainete kaupa
+  + õpetajad saavad näha õpilaste hindeid ainete kaupa
+  + õppisin kasutama reeglit .2f (näitab murdarvul ainult 2 esimest komakohta)
+
+  - eemaldasin "vanus" ja "sugu" lahtrid, arvasin, et need ei ole vajalikud
