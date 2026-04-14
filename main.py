@@ -3,16 +3,48 @@ class School:
       pass
 
 class Student: # õpilaste andmed
-   def __init__(self, nimi, kursus, vanus, sugu, keskmine_hinne):
+   def __init__(self, nimi, kursus):
       self.nimi=nimi
       self.kursus=kursus
-      self.vanus=vanus
-      self.sugu=sugu
-      self.keskmine_hinne=keskmine_hinne
       self.hinded = []
 
    def lisa_hinne(self, aine, hinne):
+      hinne = float(hinne)
       self.hinded.append((aine, hinne))
+
+   def keskmine(self):
+      if len(self.hinded) == 0:
+         return None
+      
+      summa = 0
+      arv = 0
+      for aine, hinne in self.hinded:
+         summa += hinne
+         arv += 1
+      return summa / arv
+   
+   def keskmine_aine_kaupa(self):
+      if len(self.hinded) == 0:
+         return {}
+      
+      aine_map = {}
+
+      # kogume hinded aine kaupa
+      for aine, hinne in self.hinded:
+         if aine not in aine_map:
+            aine_map[aine] = []
+         aine_map[aine].append(hinne)
+
+      # arvutame iga aine keskmise hinde
+      aine_keskmised = {}
+      for aine in aine_map:
+         summa = 0
+         arv = 0
+         for hinne in aine_map[aine]:
+            summa += hinne
+            arv += 1
+         aine_keskmised[aine] = summa / arv
+      return aine_keskmised
 
    def __str__(self):
       return f"{self.nimi}, {self.kursus}"
@@ -135,7 +167,8 @@ def teacher_menu(login_system, student_list, teacher_list): # õpetaja valikud
       print("2. Vaata õpetajate nimekirja")
       print("3. Vaata õpilase hindeid")
       print("4. Lisa õpilasele hinne")
-      print("5. Logi välja")
+      print("5. Vaata õpilase keskmist hinnet")
+      print("6. Logi välja")
       choice = input("Vali tegevus: ")
 
       if choice == '1':
@@ -143,13 +176,35 @@ def teacher_menu(login_system, student_list, teacher_list): # õpetaja valikud
       elif choice == '2':
          teacher_list.displayInfo()
       elif choice == '3': # ajutine, lisan hiljem
-         break
+         nimi = input("Sisesta õpilase täisnimi: ")
+         student_list.display_grades(nimi)
       elif choice == '4': # ajutine, lisan hiljem
-         nimi = input("Õpilase nimi: ")
-         kursus = input("Aine: ")
-         hinne = input("Hinne: ")
-         break
+         nimi = input("Õpilase täisnimi: ")
+         student = student_list.find_by_name(nimi)
+         if student is None:
+            print("Õpilast sellise nimega ei leitud.")
+         else:
+            aine = input("Aine: ")
+            hinne = input("Hinne: ")
+            student.lisa_hinne(aine, hinne)
+            print("Hinne lisatud!")
       elif choice == '5':
+         nimi = input("Sisesta õpilase täisnimi: ")
+         student = student_list.find_by_name(nimi)
+         if student is None:
+            print("Õpilast sellise nimega ei leitud.")
+         else:
+            avg = student.keskmine()
+            if avg is None:
+               print("Õpilasel ei ole veel hindeid")
+            else:
+               print(f"Õpilase {student.nimi} üldine keskmine hinne: {avg:.2f}")
+               # vaata keskmist hinnet aine kaupa
+               aine_keskmised = student.keskmine_aine_kaupa()
+               print("Keskmised hinded aine kaupa: ")
+               for aine, k in aine_keskmised.items():
+                  print(f"{aine}: {k:.2f}")
+      elif choice == '6':
          login_system.logout()
          break
       else:
