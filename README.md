@@ -26,8 +26,8 @@ Admini õigused :
 Dokumentatsioon on tehtud Trellos
 https://trello.com/b/tz0Mvv5e
 
-git add "file.txt"
-git commit -m "second commit"
+git add "file.txt"<br>
+git commit -m "second commit"<br>
 git push -u origin main
 
 
@@ -63,8 +63,8 @@ Töö kestvus : 1h 30 min (koolis)
 
 Commit 3
 Õpilase õiguste muutmine
-  +++ õpilased saavad nüüd enda hindeid ja üldist keskmist hinnet näha
-  +++ õpetajad saavad õpilaste keskmiseid hindeid vaadata
+  +++ õpilased saavad nüüd enda hindeid ja üldist keskmist hinnet näha<br>
+  +++ õpetajad saavad õpilaste keskmiseid hindeid vaadata<br>
   +++ enam ei pea eraldi õpilasi/õpetajaid lisama vaid registreerides lisatakse need automaatselt rollidesse
-  
+  <br>
   --- õpilased ei saa enam teiste õpilaste andmeid vaadata
