@@ -46,6 +46,7 @@ Töö kestvus : 3h (koolis)
 
 ## 04.14.2026
 
+Commit 1
 Lisasin hinnete süsteemi
   + õpetajad saavad hindeid lisada ainete kaupa
   + õpetajad saavad näha õpilaste hindeid ainete kaupa
@@ -53,4 +54,9 @@ Lisasin hinnete süsteemi
 
   - eemaldasin "vanus" ja "sugu" lahtrid, arvasin, et need ei ole vajalikud
 
+Commit 2
+  + parandasin õpetaja kasutaja registreerimise
+  + vahetasin mõned koodi osad eesti keelseks, tekitas probleemi koodi kirjutamisel
+
 Töö kestvus : 1h 30 min (koolis)
+
