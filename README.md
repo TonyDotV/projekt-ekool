@@ -33,7 +33,7 @@ git push -u origin main
 
 # Muudatused
 
-04.09.2026
+## 04.09.2026
 
 + Muutsin enamus koodi inglise keelseks, et mul oleks lihtsam koodist aru saada (olen harjunud koodi kirjutama inglise keeles)
 + lisasin õiguseid õpetaja rollile (hinnete lisamine ja nägemine)
@@ -44,7 +44,7 @@ Töö kestvus : 3h = 2 paari (1h 30min x 2)
 
 
 
-04.14.2026
+## 04.14.2026
 
 Lisasin hinnete süsteem
   + õpetajad saavad hindeid lisada ainete kaupa
