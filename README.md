@@ -30,3 +30,27 @@ git add "file.txt"
 git commit -m "second commit"
 git push -u origin main
 
+
+# Muudatused
+
+## 04.09.2026
+
++ Muutsin enamus koodi inglise keelseks, et mul oleks lihtsam koodist aru saada (olen harjunud koodi kirjutama inglise keeles)
++ lisasin õiguseid õpetaja rollile (hinnete lisamine ja nägemine)
++ parandasin õpetaja lisamise ja õpetajate nimekirja nägemise adminina
++ lisasin kommentaarid, mis seletavad lühidalt, mida koodi osad teevad
+
+Töö kestvus : 3h (koolis)
+
+
+
+## 04.14.2026
+
+Lisasin hinnete süsteemi
+  + õpetajad saavad hindeid lisada ainete kaupa
+  + õpetajad saavad näha õpilaste hindeid ainete kaupa
+  + õppisin kasutama reeglit .2f (näitab murdarvul ainult 2 esimest komakohta)
+
+  - eemaldasin "vanus" ja "sugu" lahtrid, arvasin, et need ei ole vajalikud
+
+Töö kestvus : 1h 30 min (koolis)
