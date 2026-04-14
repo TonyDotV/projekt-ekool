@@ -57,10 +57,10 @@ Lisasin hinnete süsteemi<br>
 
 Commit 2
 <br>
-Veaparandused
-  ++ parandasin õpetaja kasutaja registreerimise
+Veaparandused<br>
+  ++ parandasin õpetaja kasutaja registreerimise<br>
   ++ vahetasin mõned koodi osad eesti keelseks, tekitas probleemi koodi kirjutamisel
-
+<br>
 Töö kestvus : 1h 30 min (koolis)
 
 Commit 3
@@ -68,6 +68,7 @@ Commit 3
 Õpilase õiguste muutmine<br>
   ++ õpilased saavad nüüd enda hindeid ja üldist keskmist hinnet näha<br>
   ++ õpetajad saavad õpilaste keskmiseid hindeid vaadata<br>
-  ++ enam ei pea eraldi õpilasi/õpetajaid lisama vaid registreerides lisatakse need automaatselt rollidesse
+  ++ enam ei pea eraldi õpilasi/õpetajaid lisama vaid registreerides lisatakse need automaatselt rollidesse<br>
+  ++ admin saab nüüd eemaldada õpetajaid/õpilasi süsteemist
   <br>
   -- õpilased ei saa enam teiste õpilaste andmeid vaadata
