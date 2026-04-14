@@ -40,15 +40,17 @@ git push -u origin main
 + parandasin õpetaja lisamise ja õpetajate nimekirja nägemise adminina
 + lisasin kommentaarid, mis seletavad lühidalt, mida koodi osad teevad
 
-Töö kestvus : 3h = 2 paari (1h 30min x 2)
+Töö kestvus : 3h (koolis)
 
 
 
 ## 04.14.2026
 
-Lisasin hinnete süsteem
+Lisasin hinnete süsteemi
   + õpetajad saavad hindeid lisada ainete kaupa
   + õpetajad saavad näha õpilaste hindeid ainete kaupa
   + õppisin kasutama reeglit .2f (näitab murdarvul ainult 2 esimest komakohta)
 
   - eemaldasin "vanus" ja "sugu" lahtrid, arvasin, et need ei ole vajalikud
+
+Töö kestvus : 1h 30 min (koolis)
