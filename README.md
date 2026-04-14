@@ -52,11 +52,19 @@ Lisasin hinnete süsteemi
   + õpetajad saavad näha õpilaste hindeid ainete kaupa
   + õppisin kasutama reeglit .2f (näitab murdarvul ainult 2 esimest komakohta)
 
-  - eemaldasin "vanus" ja "sugu" lahtrid, arvasin, et need ei ole vajalikud
+  --- eemaldasin "vanus" ja "sugu" lahtrid, arvasin, et need ei ole vajalikud
 
 Commit 2
+Veaparandused
   + parandasin õpetaja kasutaja registreerimise
   + vahetasin mõned koodi osad eesti keelseks, tekitas probleemi koodi kirjutamisel
 
 Töö kestvus : 1h 30 min (koolis)
 
+Commit 3
+Õpilase õiguste muutmine
+  +++ õpilased saavad nüüd enda hindeid ja üldist keskmist hinnet näha
+  +++ õpetajad saavad õpilaste keskmiseid hindeid vaadata
+  +++ enam ei pea eraldi õpilasi/õpetajaid lisama vaid registreerides lisatakse need automaatselt rollidesse
+  
+  --- õpilased ei saa enam teiste õpilaste andmeid vaadata
