@@ -49,25 +49,25 @@ Töö kestvus : 3h (koolis)
 Commit 1
 <br>
 Lisasin hinnete süsteemi
-  + õpetajad saavad hindeid lisada ainete kaupa
-  + õpetajad saavad näha õpilaste hindeid ainete kaupa
-  + õppisin kasutama reeglit .2f (näitab murdarvul ainult 2 esimest komakohta)
+  ++ õpetajad saavad hindeid lisada ainete kaupa
+  ++ õpetajad saavad näha õpilaste hindeid ainete kaupa
+  ++ õppisin kasutama reeglit .2f (näitab murdarvul ainult 2 esimest komakohta)
 
-  --- eemaldasin "vanus" ja "sugu" lahtrid, arvasin, et need ei ole vajalikud
+  -- eemaldasin "vanus" ja "sugu" lahtrid, arvasin, et need ei ole vajalikud
 
 Commit 2
 <br>
 Veaparandused
-  + parandasin õpetaja kasutaja registreerimise
-  + vahetasin mõned koodi osad eesti keelseks, tekitas probleemi koodi kirjutamisel
+  ++ parandasin õpetaja kasutaja registreerimise
+  ++ vahetasin mõned koodi osad eesti keelseks, tekitas probleemi koodi kirjutamisel
 
 Töö kestvus : 1h 30 min (koolis)
 
 Commit 3
 <br>
 Õpilase õiguste muutmine<br>
-  +++ õpilased saavad nüüd enda hindeid ja üldist keskmist hinnet näha<br>
-  +++ õpetajad saavad õpilaste keskmiseid hindeid vaadata<br>
-  +++ enam ei pea eraldi õpilasi/õpetajaid lisama vaid registreerides lisatakse need automaatselt rollidesse
+  ++ õpilased saavad nüüd enda hindeid ja üldist keskmist hinnet näha<br>
+  ++ õpetajad saavad õpilaste keskmiseid hindeid vaadata<br>
+  ++ enam ei pea eraldi õpilasi/õpetajaid lisama vaid registreerides lisatakse need automaatselt rollidesse
   <br>
-  --- õpilased ei saa enam teiste õpilaste andmeid vaadata
+  -- õpilased ei saa enam teiste õpilaste andmeid vaadata
