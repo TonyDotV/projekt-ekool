@@ -259,16 +259,24 @@ def main():
    print("--- KOOLI SÜSTEEM ---")
 
    while True:
-      if login_system.login():
-         role = login_system.current_user.role
-         
-         if role == 'student':
-            student_menu(login_system, student_list)
-         elif role == 'teacher':
-            teacher_menu(login_system, student_list, teacher_list)
-         elif role == 'admin':
-            admin_menu(login_system, student_list, teacher_list)
-      
+      # 1) Küsi kasutajalt sisselogimist
+      if not login_system.login():
+         # 3 ebaõnnestunud katset -> lõpetame programmi
+         break
+
+      # 2) Kui login õnnestus, mine vastavasse menüüsse
+      role = login_system.current_user.role
+
+      if role == 'õpilane':
+         student_menu(login_system, student_list)
+         role = "student"
+      elif role == 'õpetaja':
+         teacher_menu(login_system, student_list, teacher_list)
+         role = "teacher"
+      elif role == 'admin':
+         admin_menu(login_system, student_list, teacher_list)
+
+      # 3) Siia jõuame AINULT siis, kui menüüst valiti "Logi välja"
       retry = input("\nKas soovid uuesti sisse logida? (jah/ei): ")
       if retry.lower() != 'jah':
          print("Head aega!")
