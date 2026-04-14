@@ -48,11 +48,11 @@ Töö kestvus : 3h (koolis)
 
 Commit 1
 <br>
-Lisasin hinnete süsteemi
-  ++ õpetajad saavad hindeid lisada ainete kaupa
-  ++ õpetajad saavad näha õpilaste hindeid ainete kaupa
+Lisasin hinnete süsteemi<br>
+  ++ õpetajad saavad hindeid lisada ainete kaupa<br>
+  ++ õpetajad saavad näha õpilaste hindeid ainete kaupa<br>
   ++ õppisin kasutama reeglit .2f (näitab murdarvul ainult 2 esimest komakohta)
-
+  <br>
   -- eemaldasin "vanus" ja "sugu" lahtrid, arvasin, et need ei ole vajalikud
 
 Commit 2
