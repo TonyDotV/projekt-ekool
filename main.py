@@ -307,38 +307,38 @@ def admin_menu(login_system, student_list, teacher_list): # admini valikud
       choice = input("Vali tegevus: ")
 
       if choice == '1':
-         student_list.displayInfo()
+         student_list.displayInfo() # näitab õpilaste nimekirja
       
       elif choice == '2':
-         teacher_list.displayInfo()
+         teacher_list.displayInfo() # näitab õpetajate nimekirja
       
-      elif choice == '3':
-         username = input("Uus kasutajanimi: ")
+      elif choice == '3': # saab registreerida uue kasutaja
+         ### valid uue kasutajanime, parooli ja rolli kasutaja loomiseks ###
+         username = input("Uus kasutajanimi: ") 
          password = input("Parool: ")
          role = input("Roll(õpilane, õpetaja): ").lower()
-         if role == "õpilane":
+         if role == "õpilane": # kontrollib, kas valiti õpilase roll
             role = "student"
             full_name = input("Õpilase täisnimi: ").strip()
             kursus = input("Kursus: ").strip()
-
+         ### õnnestumise korral luuakse uus kasutaja õpilaste listi ###
             success = login_system.register_user(username, password, role, full_name)
             if success:
                student_list.addStudent(Student(full_name, kursus))
                print("Õpilase konto ja õpilane lisatud!")
-
+         ### õpetaja rolli valimisel täida õpetaja rolli lüngad ###
          elif role == "õpetaja":
             role = "teacher"
             full_name = input("Õpetaja täisnimi: ")
             subjects = input("Ained (komaga eraldatud): ")
-
+         ### õnnestumise korral luuakse uus kasutaja õpetajate listi ###
             success = login_system.register_user(username, password, role, full_name)
-
             if success:
                teacher_list.addTeacher(Teacher(full_name, subjects))
                print("Õpetaja konto ja õpetaja lisatud!")
          else:
             print("Vale roll!")
-
+         ### valiku 4 puhul kirjuta kasutajanimi, kelle soovid kustutada listist ###
       elif choice == '4':
          username = input("Sisesta kustutatava kasutaja kasutajanimi: ").strip()
          removed_user = login_system.delete_user(username)
