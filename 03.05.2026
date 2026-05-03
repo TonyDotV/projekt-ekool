@@ -1,0 +1,15 @@
+## 05.03.2026 - 05.04.2026
+
+++ Põhjendasin koodi osasid docstringide ja kommentaaridega<br>
+++ Seletasin TKinteri koodi osad, sest see on uus minu jaoks ja hea meeldetuletuseks<br>
+++ Õpetajad saavad lisada hindeid ainult 1-5 vahemikus nüüd<br>
+++ Õpetajate registreerimisel saab Admin anda neile ained, mida õpetavad, mida näeb õpetajate loendis<br>
+++ Õpilase registreerimisel küsitakse nüüd kursust<br>
+++ Muutsin TKinteri koodi osi lihtsamaks<br>
+++ Parandasin TKinteris registreerimismenüü vead (täisnimi, kursus ja ained olid Registreeri nupu all)
+
+Peale uuenduste piding väga palju probleeme lahendama, sest TKinter on minule uus ja mul on sellest raske aru saada niiet, juhtus palju vigu, mida oli raske parandada.<br>
+Igaksjuhuks on alles jäetud terminali versioon, sest pole kindel, kas saan korralikult seletada TKinteri osa koodist. Lisasin võimalikult palju seletusi.<br>
+
+Töö kestvus ~ 5h-6h kodus<br>
+Enamus ajast kulus kommentaaride ja docstringide lisamisele ja peamiselt vigade parandamisele.
