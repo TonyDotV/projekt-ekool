@@ -102,3 +102,4 @@ Töö kestvus ~ 5h-6h kodus<br>
 Enamus ajast kulus kommentaaride ja docstringide lisamisele ja peamiselt vigade parandamisele.
 
 
+
