@@ -74,3 +74,26 @@ Commit 3
   -- õpilased ei saa enam teiste õpilaste andmeid vaadata
   <br>
   Töö kestvus : 1h 30m (koolis)
+
+
+## 04.29.2026
+
+++ Õppisin TKinteri kohta, et anda programmile kasutajaliides<br>
+++ Lisasin paari koodijupi juurde kommentaarid ja docstringid<br>
+
+
+Töö kestvus : 3h = 2 paari (1h 30min x 2)
+
+
+## 05.03.2026
+
+++ Põhjendasin koodi osasid docstringide ja kommentaaridega<br>
+++ Seletasin TKinteri koodi osad, sest see on uus minu jaoks ja meeldetuletuseks<br>
+++ Õpetajad saavad lisada hindeid ainult 1-5 vahemikus nüüd<br>
+++ Õpetajate registreerimisel saab Admin anda neile ained, mida õpetavad, mida näeb õpetajate loendis<br>
+++ Õpilase registreerimisel küsitakse nüüd kursust<br>
+
+Peale uuenduste piding väga palju probleeme lahendama, sest TKinter on minule uus ja mul on sellest raske aru saada niiet, juhtus palju vigu, mida oli raske parandada.<br>
+Igaksjuhuks on alles jäetud terminali versioon, sest pole kindel, kas saan korralikult seletada TKinteri osa koodist. Lisasin võimalikult palju seletusi.
+
+
