@@ -45,36 +45,39 @@ Töö kestvus : 3h (koolis)
 
 ## 04.09.2026
 
-++ Muutsin enamus koodi inglise keelseks, et mul oleks lihtsam koodist aru saada (olen harjunud koodi kirjutama inglise keeles)
-++ Lisasin õiguseid õpetaja rollile (hinnete lisamine ja nägemine)
-++ Parandasin õpetaja lisamise ja õpetajate nimekirja nägemise adminina
-++ Lisasin kommentaarid, mis seletavad lühidalt, mida koodi osad teevad
+++ Muutsin enamus koodi inglise keelseks, et mul oleks lihtsam koodist aru saada (olen harjunud koodi kirjutama inglise keeles)<br>
+++ Lisasin õiguseid õpetaja rollile (hinnete lisamine ja nägemine)<br>
+++ Parandasin õpetaja lisamise ja õpetajate nimekirja nägemise adminina<br>
+++ Lisasin kommentaarid, mis seletavad lühidalt, mida koodi osad teevad<br>
 
 Töö kestvus : 3h (koolis)
 
 
 ## 04.14.2026
 
-Commit 1
-<br>
+Commit 1<br>
+
 Lisasin hinnete süsteemi<br>
+
   ++ õpetajad saavad hindeid lisada ainete kaupa<br>
   ++ õpetajad saavad näha õpilaste hindeid ainete kaupa<br>
   ++ õppisin kasutama reeglit .2f (näitab murdarvul ainult 2 esimest komakohta)
   <br>
   -- eemaldasin "vanus" ja "sugu" lahtrid, arvasin, et need ei ole vajalikud
 
-Commit 2
-<br>
+Commit 2<br>
+
 Veaparandused<br>
+
   ++ parandasin õpetaja kasutaja registreerimise<br>
   ++ vahetasin mõned koodi osad eesti keelseks, tekitas probleemi koodi kirjutamisel
 <br>
 Töö kestvus : 1h 30m (koolis)
 
-Commit 3
-<br>
+Commit 3<br>
+
 Õpilase õiguste muutmine<br>
+
   ++ õpilased saavad nüüd enda hindeid ja üldist keskmist hinnet näha<br>
   ++ õpetajad saavad õpilaste keskmiseid hindeid vaadata<br>
   ++ enam ei pea eraldi õpilasi/õpetajaid lisama vaid registreerides lisatakse need automaatselt rollidesse<br>
@@ -82,7 +85,7 @@ Commit 3
   <br>
   -- õpilased ei saa enam teiste õpilaste andmeid vaadata
   <br>
-  Töö kestvus : 1h 30m (koolis)
+  Töö kestvus : 1h 30m (koolis) + 4h kodus
 
 
 ## 04.29.2026
