@@ -542,11 +542,11 @@ class TeacherFrame(tk.Frame):
       body.pack(padx=30, pady=24, fill="both", expand=True)
 
       btns = [
-         ("Vaata õpilaste nimekirja",     self._student_list),
-         ("Vaata õpetajate nimekirja",    self._teacher_list),
-         ("Vaata õpilase hindeid",         self._view_grades_dialog),
-         ("Lisa õpilasele hinne",          self._add_grade_dialog),
-         ("Õpilase keskmine hinne",        self._student_avg_dialog),
+         ("Vaata õpilaste nimekirja", self._student_list),
+         ("Vaata õpetajate nimekirja", self._teacher_list),
+         ("Vaata õpilase hindeid", self._view_grades_dialog),
+         ("Lisa õpilasele hinne", self._add_grade_dialog),
+         ("Õpilase keskmine hinne", self._student_avg_dialog),
       ]
       for txt, cmd in btns:
          make_button(body, txt, cmd, color="#437a22", width=34).pack(pady=6, ipady=4)
