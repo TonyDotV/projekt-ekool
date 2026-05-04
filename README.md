@@ -26,6 +26,8 @@ Admini õigused :
 Dokumentatsioon on tehtud Trellos
 https://trello.com/b/tz0Mvv5e
 
+## Meeldetuletus
+
 git add "file.txt"<br>
 git commit -m "second commit"<br>
 git push -u origin main
@@ -33,39 +35,49 @@ git push -u origin main
 
 # Muudatused
 
+## 01.29.2026
+
+++ Baaskoodi loomine ilma TKinterita<br>
+++ Dokumentatsiooni koostamine<br>
+++ Github repository kasutamise õppimine<br>
+
+Töö kestvus : 3h (koolis)
+
 ## 04.09.2026
 
-+ Muutsin enamus koodi inglise keelseks, et mul oleks lihtsam koodist aru saada (olen harjunud koodi kirjutama inglise keeles)
-+ lisasin õiguseid õpetaja rollile (hinnete lisamine ja nägemine)
-+ parandasin õpetaja lisamise ja õpetajate nimekirja nägemise adminina
-+ lisasin kommentaarid, mis seletavad lühidalt, mida koodi osad teevad
+++ Muutsin enamus koodi inglise keelseks, et mul oleks lihtsam koodist aru saada (olen harjunud koodi kirjutama inglise keeles)<br>
+++ Lisasin õiguseid õpetaja rollile (hinnete lisamine ja nägemine)<br>
+++ Parandasin õpetaja lisamise ja õpetajate nimekirja nägemise adminina<br>
+++ Lisasin kommentaarid, mis seletavad lühidalt, mida koodi osad teevad<br>
 
 Töö kestvus : 3h (koolis)
 
 
-
 ## 04.14.2026
 
-Commit 1
-<br>
+Commit 1<br>
+
 Lisasin hinnete süsteemi<br>
+
   ++ õpetajad saavad hindeid lisada ainete kaupa<br>
   ++ õpetajad saavad näha õpilaste hindeid ainete kaupa<br>
   ++ õppisin kasutama reeglit .2f (näitab murdarvul ainult 2 esimest komakohta)
   <br>
   -- eemaldasin "vanus" ja "sugu" lahtrid, arvasin, et need ei ole vajalikud
 
-Commit 2
-<br>
+Commit 2<br>
+
 Veaparandused<br>
+
   ++ parandasin õpetaja kasutaja registreerimise<br>
   ++ vahetasin mõned koodi osad eesti keelseks, tekitas probleemi koodi kirjutamisel
 <br>
 Töö kestvus : 1h 30m (koolis)
 
-Commit 3
-<br>
+Commit 3<br>
+
 Õpilase õiguste muutmine<br>
+
   ++ õpilased saavad nüüd enda hindeid ja üldist keskmist hinnet näha<br>
   ++ õpetajad saavad õpilaste keskmiseid hindeid vaadata<br>
   ++ enam ei pea eraldi õpilasi/õpetajaid lisama vaid registreerides lisatakse need automaatselt rollidesse<br>
@@ -73,7 +85,7 @@ Commit 3
   <br>
   -- õpilased ei saa enam teiste õpilaste andmeid vaadata
   <br>
-  Töö kestvus : 1h 30m (koolis)
+  Töö kestvus : 1h 30m (koolis) + 4h kodus
 
 
 ## 04.29.2026
@@ -95,7 +107,7 @@ Töö kestvus : 3h = 2 paari (1h 30min x 2)
 ++ Muutsin TKinteri koodi osi lihtsamaks<br>
 ++ Parandasin TKinteris registreerimismenüü vead (täisnimi, kursus ja ained olid Registreeri nupu all)
 
-Peale uuenduste piding väga palju probleeme lahendama, sest TKinter on minule uus ja mul on sellest raske aru saada niiet, juhtus palju vigu, mida oli raske parandada.<br>
+Peale uuenduste pidin väga palju probleeme lahendama, sest TKinter on minule uus ja mul on sellest raske aru saada niiet, juhtus palju vigu, mida oli raske parandada.<br>
 Igaksjuhuks on alles jäetud terminali versioon, sest pole kindel, kas saan korralikult seletada TKinteri osa koodist. Lisasin võimalikult palju seletusi.<br>
 
 Töö kestvus ~ 5h-6h kodus<br>
