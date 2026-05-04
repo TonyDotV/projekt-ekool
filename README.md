@@ -107,7 +107,7 @@ Töö kestvus : 3h = 2 paari (1h 30min x 2)
 ++ Muutsin TKinteri koodi osi lihtsamaks<br>
 ++ Parandasin TKinteris registreerimismenüü vead (täisnimi, kursus ja ained olid Registreeri nupu all)
 
-Peale uuenduste piding väga palju probleeme lahendama, sest TKinter on minule uus ja mul on sellest raske aru saada niiet, juhtus palju vigu, mida oli raske parandada.<br>
+Peale uuenduste pidin väga palju probleeme lahendama, sest TKinter on minule uus ja mul on sellest raske aru saada niiet, juhtus palju vigu, mida oli raske parandada.<br>
 Igaksjuhuks on alles jäetud terminali versioon, sest pole kindel, kas saan korralikult seletada TKinteri osa koodist. Lisasin võimalikult palju seletusi.<br>
 
 Töö kestvus ~ 5h-6h kodus<br>
