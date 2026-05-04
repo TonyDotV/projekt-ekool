@@ -36,7 +36,8 @@ class Student:
       return summa / arv
 
    def keskmine_aine_kaupa(self):
-      '''tagastab sõnastiku, kus võtmed on ainete nimed ja väärtused nende keskmised hinded. Kui hinnetelehte pole, tagastab tühja sõnastiku'''
+      '''tagastab sõnastiku, kus võtmed on ainete nimed ja väärtused nende keskmised hinded. 
+      Kui hinnetelehte pole, tagastab tühja sõnastiku'''
       if len(self.hinded) == 0:
          return {}
       aine_map = {}
@@ -60,7 +61,8 @@ class Student:
 
 
 class StudentList:
-   '''hoiab õpilaste nimekirja, võimaldab lisada, kuvada, otsida ja kustutada õpilasi nime järgi. Otsing on case-insensitive ja ignoreerib ees- ja lõputühikud'''
+   '''hoiab õpilaste nimekirja, võimaldab lisada, kuvada, otsida ja kustutada õpilasi nime järgi.
+   Otsing on case-insensitive ja ignoreerib ees- ja lõputühikud'''
    def __init__(self):
       self.arr = []
 
@@ -74,7 +76,8 @@ class StudentList:
          print(s)
 
    def find_by_name(self, nimi):
-      '''leiab õpilase nime järgi, tagastab Student objekti, kui leiti, või None, kui õpilast ei leitud. Otsing on case-insensitive ja ignoreerib ees- ja lõputühikud'''
+      '''leiab õpilase nime järgi, tagastab Student objekti, kui leiti, või None, kui õpilast ei leitud.
+      Otsing on case-insensitive ja ignoreerib ees- ja lõputühikud'''
       if nimi is None:
          return None
       nimi = nimi.strip().lower()
@@ -104,7 +107,6 @@ class StudentList:
       for aine, hinne in student.hinded:
          print(f"{aine}: {hinne}")
 
-
 class Teacher:
    '''hoiab õpetaja nime ja kursused, mida ta õpetab'''
    def __init__(self, nimi, kursused):
@@ -115,9 +117,9 @@ class Teacher:
       '''tagastab õpetaja nime ja kursused, mida ta õpetab'''
       return f"{self.nimi}, {self.kursused}"
 
-
 class TeacherList: 
-   '''hoiab õpetajate nimekirja, võimaldab lisada, kuvada, otsida ja kustutada õpetajaid nime järgi. Otsing on case-insensitive ja ignoreerib ees- ja lõputühikud'''
+   '''hoiab õpetajate nimekirja, võimaldab lisada, kuvada, otsida ja kustutada õpetajaid nime järgi.
+   Otsing on case-insensitive ja ignoreerib ees- ja lõputühikud'''
    def __init__(self):
       self.arr = []
 
@@ -148,7 +150,6 @@ class TeacherList:
          return True
       return False
 
-
 class User: 
    '''lihtne kasutajaklass, mis hoiab kasutajanime, parooli, rolli (student, teacher, admin) ja täisnime'''
    def __init__(self, username, password, role, full_name=None):
@@ -156,7 +157,6 @@ class User:
       self.password = password
       self.role = role
       self.full_name = full_name
-
 
 class LoginSystem: 
    '''lihtne loginisüsteem, mis hoiab kasutajaid sõnastikus ja võimaldab registreerida, kustutada, sisse- ja välja logida'''
@@ -167,7 +167,8 @@ class LoginSystem:
          'admin': User('admin', 'admin123', 'admin')
       }
       self.current_user = None
-      '''registreerib uue kasutaja, kui kasutajanimi pole juba olemas. Roll peab olema "student", "teacher" või "admin". Admini rolliga kasutaja ei saa kustutada ega muuta teisi kasutajaid'''
+      '''registreerib uue kasutaja, kui kasutajanimi pole juba olemas. Roll peab olema "student", "teacher" või "admin".
+      Admini rolliga kasutaja ei saa kustutada ega muuta teisi kasutajaid'''
       def register_user(self, username, password, role, full_name=None): 
          if username in self.users:
             print("See kasutajanimi on juba olemas.")
@@ -198,14 +199,14 @@ class LoginSystem:
       self.current_user = None
 
    def register_user(self, username, password, role, full_name=None): 
-      '''registreerib uue kasutaja, kui kasutajanimi pole juba olemas. Roll peab olema "student", "teacher" või "admin". Admini rolliga kasutaja ei saa kustutada ega muuta teisi kasutajaid'''
+      '''registreerib uue kasutaja, kui kasutajanimi pole juba olemas. 
+      Roll peab olema "student", "teacher" või "admin". Admini rolliga kasutaja ei saa kustutada ega muuta teisi kasutajaid'''
       if username in self.users:
          print("See kasutajanimi on juba olemas.")
          return False
       self.users[username] = User(username, password, role, full_name)
       print(f"Kasutaja {username} registreeriti kui {role}.")
       return True
-
 
 # Tkinter GUI
 
@@ -306,7 +307,7 @@ def make_button(parent, text, command, color="#01696f", fg="#ffffff", width=20):
                     cursor="hand2", width=width)  # käepärane funktsioon ühtse stiiliga nuppude loomiseks
 
 def popup_table(parent_app, title, columns, rows, col_widths=None):
-   '''tabeli popupi funktsioon, mida kasutatakse hindeid ja nimekirju kuvavate akende jaoks. Võtab parameetritena vanema rakenduse, akna pealkirja, veerunimed, ridade andmed ja veergude laiused'''
+   '''tabeli popupi funktsioon, mida kasutatakse hindeid ja nimekirju kuvavate akende jaoks.'''
    win = tk.Toplevel(parent_app)
    win.title(title)
    win.configure(bg=parent_app.BG)
@@ -516,7 +517,7 @@ class StudentFrame(tk.Frame):
       self.app.show_frame(LoginFrame)
 
 
-# ── Teacher Frame ────────────────────────────────────────────────
+# Õpetajaraam
 
 class TeacherFrame(tk.Frame):
    def __init__(self, parent, app):
@@ -844,7 +845,7 @@ class AdminFrame(tk.Frame):
       self.app.show_frame(LoginFrame)
 
 
-# ── Entry point ──────────────────────────────────────────────────
+# Entry point
 
 def main():
    '''entry point, mis loob rakenduse ja käivitab peamise tsükli'''
