@@ -26,6 +26,8 @@ Admini õigused :
 Dokumentatsioon on tehtud Trellos
 https://trello.com/b/tz0Mvv5e
 
+## Meeldetuletus
+
 git add "file.txt"<br>
 git commit -m "second commit"<br>
 git push -u origin main
@@ -33,15 +35,22 @@ git push -u origin main
 
 # Muudatused
 
-## 04.09.2026
+## 01.29.2026
 
-+ Muutsin enamus koodi inglise keelseks, et mul oleks lihtsam koodist aru saada (olen harjunud koodi kirjutama inglise keeles)
-+ lisasin õiguseid õpetaja rollile (hinnete lisamine ja nägemine)
-+ parandasin õpetaja lisamise ja õpetajate nimekirja nägemise adminina
-+ lisasin kommentaarid, mis seletavad lühidalt, mida koodi osad teevad
+++ Baaskoodi loomine ilma TKinterita<br>
+++ Dokumentatsiooni koostamine<br>
+++ Github repository kasutamise õppimine<br>
 
 Töö kestvus : 3h (koolis)
 
+## 04.09.2026
+
+++ Muutsin enamus koodi inglise keelseks, et mul oleks lihtsam koodist aru saada (olen harjunud koodi kirjutama inglise keeles)
+++ Lisasin õiguseid õpetaja rollile (hinnete lisamine ja nägemine)
+++ Parandasin õpetaja lisamise ja õpetajate nimekirja nägemise adminina
+++ Lisasin kommentaarid, mis seletavad lühidalt, mida koodi osad teevad
+
+Töö kestvus : 3h (koolis)
 
 
 ## 04.14.2026
