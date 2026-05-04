@@ -2,26 +2,25 @@
 
 Rühma liikmed : Tony Vorontsov
 
-Projekti idee on luua digitaalne eKool. Koolide, õpetajate ja õpilaste nimed on välja mõeldud ning pole võetud päris elust kuid tehtud enam-vähem realistlikuks. eKooli veebilehel saab sisse logida adminina, õpetajana või õpilasena ja vastavalt sisselogitule on neil ka erinevad õigused.
+Projekti idee on luua digitaalne eKool. Õpetajate ja õpilaste nimed on välja mõeldud ning pole võetud päris elust kuid tehtud enam-vähem realistlikuks. eKooli programmis saab sisse logida adminina, õpetajana või õpilasena ja vastavalt sisselogitule on neil ka erinevad õigused.
+
 Näiteks:
 
 Admini õigused :
-- õpetaja andmeid
-- õpilaste andmeid
+- õpetaja andmete nägemine
+- õpilaste andmete nägemine
 - saab moodustada õpilaste pingerea keskmise hinde alusel
-- lubada kursustel õppida aineid
+- saab registreerida õpilasi, õpetajaid ja luua admin kasutajaid
+- saab kustutada kasutajaid
 
 Õpetaja õigused :
-- õpilaste andmed
-- õpilaste hinded
-- ained, mida õpetada
-- saab valida, mis ainet soovib õpetada (võib olla mitu)
+- õpilaste andmete nägemine
+- õpilaste hinnete lisamine
+- õpetajate loendi nägemine
 
 Õpilase õigused :
-- ülevaade sooritatud ja mitte sooritatud ainetest
+- ülevaade kõikide ainete keskmistest hinnetest
 - ülevaade oma hinnete üle sh ka keskmine hinne
-- ülevaade oma kursuse üle
-- saab ainetele registreerida
 
 Dokumentatsioon on tehtud Trellos
 https://trello.com/b/tz0Mvv5e
