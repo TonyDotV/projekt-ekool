@@ -133,7 +133,8 @@ class TeacherList:
          print(t)
 
    def find_by_name(self, nimi): 
-      '''leiab õpetaja nime järgi, tagastab Teacher objekti, kui leiti, või None, kui õpetajat ei leitud. Otsing on case-insensitive ja ignoreerib ees- ja lõputühikud'''
+      '''leiab õpetaja nime järgi, tagastab Teacher objekti, kui leiti, või None, kui õpetajat ei leitud.
+      Otsing on case-insensitive ja ignoreerib ees- ja lõputühikud'''
       if nimi is None:
          return None
       nimi = nimi.strip().lower()
@@ -278,7 +279,8 @@ class App(tk.Tk):
 # kasutlikud funktsioonid, et luua ühtse stiiliga tkinteri elemente (nupud, sildid, sisestuskastid)
 
 def make_label(parent, text, size=10, bold=False, color=None, bg=None):
-   ''' lihtsustab ühtse stiiliga siltide loomist, võtab parameetritena vanema elemendi, teksti, suuruse, paksu fondi, teksti värvi ja taustavärvi ning tagastab tk.Labeli '''
+   ''' lihtsustab ühtse stiiliga siltide loomist, võtab parameetritena vanema elemendi, teksti, suuruse, paksu fondi,
+   teksti värvi ja taustavärvi ning tagastab tk.Labeli '''
    font = ("Segoe UI", size, "bold" if bold else "normal")
    kw = {"text": text, "font": font, "bg": bg or parent.cget("bg")} # kui taustavärv pole määratud, võtab vanema taustavärvi, et sildid sulanduksid sujuvalt taustaga
    if color:
@@ -298,7 +300,8 @@ def make_entry(parent, show=None, width=28):
    return e
 
 def make_button(parent, text, command, color="#01696f", fg="#ffffff", width=20): 
-   '''ühtse stiiliga nuppude loomine, command on funktsioon, mis käivitatakse nupuvajutusega, color ja fg määravad tausta- ja tekstivärvi, width määrab nupu laiuse'''
+   '''ühtse stiiliga nuppude loomine, command on funktsioon, mis käivitatakse nupuvajutusega,
+   color ja fg määravad tausta- ja tekstivärvi, width määrab nupu laiuse'''
    return tk.Button(parent, text=text, command=command,
                     font=("Segoe UI", 10, "bold"),
                     bg=color, fg=fg, activebackground=color, 
@@ -314,7 +317,8 @@ def popup_table(parent_app, title, columns, rows, col_widths=None):
    win.grab_set()
    win.resizable(False, False)
    tree = ttk.Treeview(win, columns=columns, show="headings", height=min(len(rows)+1, 14))
-   '''show="headings" peidab vaikimisi veerunimedega kaasneva tühja veeru, height määrab maksimaalse ridade arvu, mida korraga näidatakse (lisame 1, et mahutada ka veerupäis)'''
+   '''show="headings" peidab vaikimisi veerunimedega kaasneva tühja veeru, height määrab maksimaalse ridade arvu,
+   mida korraga näidatakse (lisame 1, et mahutada ka veerupäis)'''
    for i, col in enumerate(columns):
       w = col_widths[i] if col_widths else 160
       tree.heading(col, text=col)
